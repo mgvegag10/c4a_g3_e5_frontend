@@ -1,0 +1,28 @@
+.form{
+    display: flex;
+    justify-content: center;
+  }
+
+  .Button{
+    position: absolute;
+    padding: 8px 40px;
+    top: 300px;
+    left: 460px;
+  }
+  .form-register{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 120px;
+    position: relative;
+    top: 30px;
+  }
+
+  .title{
+    position: relative;
+    top: 30px;
+    text-align: center;
+  }
+  input{
+    position: relative;
+    padding: 10px 50px;
+  }
