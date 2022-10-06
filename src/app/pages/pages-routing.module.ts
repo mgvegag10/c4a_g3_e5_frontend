@@ -31,6 +31,13 @@ const routes: Routes = [{
       .then(m => m.MesasModule),
     },
     {
+      path: "resultados",
+      loadChildren: () =>
+        import(
+          "./administracionderesultados/administracionderesultados.module"
+        ).then((m) => m.AdministracionderesultadosModule),
+    },
+    {
       path: 'dashboard',
       component: ECommerceComponent,
     },
