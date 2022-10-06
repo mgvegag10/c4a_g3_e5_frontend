@@ -2,47 +2,39 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
-    title: 'E-commerce',
+    title: 'Inicio',
+    link: '/pages/pagina-principal/paginaPrincipal',
     icon: 'shopping-cart-outline',
-    link: '/pages/dashboard',
     home: true,
   },
   {
-    title: 'IoT Dashboard',
-    icon: 'home-outline',
-    link: '/pages/iot-dashboard',
-  },
-  {
-    title: 'FEATURES',
+    title: 'CONTENIDOS',
     group: true,
   },
   {
-    title: 'Layout',
+    title: 'Pagina Principal',
     icon: 'layout-outline',
     children: [
       {
-        title: 'Stepper',
-        link: '/pages/layout/stepper',
+        title: 'Inicio',
+        link: '/pages/pagina-principal/paginaPrincipal',
       },
       {
-        title: 'List',
-        link: '/pages/layout/list',
+        title: 'Iniciar Sesión',
+        link: '/pages/seguridad/login',
       },
       {
-        title: 'Infinite List',
-        link: '/pages/layout/infinite-list',
+        title: 'Registrarse',
+        link: '/pages/usuarios/registrarse',
       },
-      {
-        title: 'Accordion',
-        link: '/pages/layout/accordion',
-      },
-      {
-        title: 'Tabs',
-        pathMatch: 'prefix',
-        link: '/pages/layout/tabs',
-      },
-    ],
+    ]
   },
+  {
+    title:'Administración Usuarios',
+    link:'/pages/usuarios/listar-usuarios',
+    icon: 'browser-outline'
+  }
+  /*
   {
     title: 'Forms',
     icon: 'edit-2-outline',
@@ -245,3 +237,4 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
 ];
+*/]

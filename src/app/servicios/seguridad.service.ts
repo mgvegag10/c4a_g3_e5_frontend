@@ -39,6 +39,7 @@ export class SeguridadService {
   getUsuario() {
     return this.elUsuario.asObservable();
   }
+
   /**
    * Realiza la petición al backend con el correo y la contraseña
    * para verificar si existe o no en la plataforma
@@ -47,7 +48,7 @@ export class SeguridadService {
    */
   
   login(infoUsuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(`${`http://127.0.0.1:9999`}/login`, infoUsuario);
+    return this.http.post<Usuario>(`${environment.url_gateway}/login`, infoUsuario);
   }
 
   /***

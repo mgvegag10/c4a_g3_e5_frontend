@@ -8,8 +8,7 @@
   .logo{
     position: absolute;
     width: 230px;
-    left: 300px;
-    top: 80px;
+    top: 90px;
   }
   
   .nav-content{
@@ -57,26 +56,29 @@
 
 /*LOGIN CSS*/
 .form{
+    height: 350px;
     display: flex;
-    justify-content: center;
+    align-content: center;
   }
   .login-form{
     position: relative;
     top: 80px;
+    left: 36%;
   }
   .title{
     position: relative;
-    top: 50px;
+    top: 65px;
     text-align: center;
   }
   input{
     position: relative;
     padding: 10px 50px;
+    width: 300px;
   }
 
-  .Button{
-    position: absolute;
-    padding: 8px 40px;
-    top: 200px;
-    left: 80px;
+  .btn{
+    position: relative;
+    top: 20px;
+    left: 60px;
+    width: 150px;
   }

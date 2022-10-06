@@ -11,7 +11,7 @@ import { SeguridadService } from '../../../servicios/seguridad.service';
 })
 export class LoginComponent implements OnInit {
 
-  seudonimo:string="";
+  correo:string="";
   contrasena:string="";
   constructor(private miServicioSeguridad : SeguridadService,
               private router: Router) { }
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
    */
   login():void{  
     let elUsuario:Usuario={
-      seudonimo:this.seudonimo,
+      correo:this.correo,
       contrasena:this.contrasena
     }
     this.miServicioSeguridad.login(elUsuario).subscribe(
