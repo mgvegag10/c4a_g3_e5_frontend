@@ -11,6 +11,16 @@ const routes: Routes = [{
   component: PagesComponent,
   children: [
     {
+      path: 'usuarios',
+      loadChildren: () => import('./usuarios/usuarios.module')
+      .then(m => m.UsuariosModule),
+    },
+    {
+      path: 'mesas',
+      loadChildren: () => import('./mesas/mesas.module')
+      .then(m => m.MesasModule),
+    },
+    {
       path: 'pagina-principal',
       loadChildren: () => import('./pagina-principal/pagina-principal.module')
       .then(m => m.PaginaPrincipalModule),
