@@ -67,17 +67,18 @@
   }
   .title{
     position: relative;
-    top: 50px;
+    top: 65px;
     text-align: center;
   }
   input{
     position: relative;
     padding: 10px 50px;
+    width: 300px;
   }
 
-  .Button{
-    position: absolute;
-    padding: 8px 40px;
-    top: 200px;
-    left: 80px;
+  .btn{
+    position: relative;
+    top: 20px;
+    left: 60px;
+    width: 150px;
   }

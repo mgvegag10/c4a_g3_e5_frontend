@@ -6,7 +6,7 @@
         </ul>
         <ul class="nav-content">
           <a class="nav-item" routerLink="/pages/seguridad/login" routerLinkActive="">Iniciar Sesión</a>
-          <a class="nav-item" routerLink="/pages/seguridad/register" routerLinkActive="">Registrarse</a>
+          <a class="nav-item" routerLink="/pages/usuarios/registrarse" routerLinkActive="">Registrarse</a>
           <a class="nav-item" routerLink="/pages/pagina-principal/paginaPrincipal" routerLinkActive="">Pagina Principal</a>
         </ul>
       </nav>
@@ -17,13 +17,13 @@
   
 <div class="content">
     <h2 class="title">Iniciar Sesión</h2>
-    <div class="form">
+    <nb-card class="form">
         <nb-card-body class="login-form">
             <p>Correo</p>
-            <input type="text" [(ngModel)]="correo" placeholder="Ingrese el correo" name="" id="">
+            <input class="form-control" type="text" [(ngModel)]="correo"  name="" id="">
             <p>Contraseña</p>
-            <input type="password" [(ngModel)]="contrasena" placeholder="Ingrese la contraseña" name="" id="">
-            <button class="Button "type="submit" (click)="login()">ENVIAR</button>
+            <input class="form-control" type="password" [(ngModel)]="contrasena"  name="" id="">
+            <button class="btn btn-primary btn-block" type="submit" (click)="login()">ENVIAR</button>
           </nb-card-body>>
-    </div>
+    </nb-card>
 </div>

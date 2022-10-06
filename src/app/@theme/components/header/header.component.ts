@@ -5,6 +5,10 @@ import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { Usuario } from '../../../modelos/usuario.model';
+import { UsuarioService } from '../../../servicios/usuario.service';
+import { SeguridadService } from '../../../servicios/seguridad.service';
+import { UserService } from '../../../@core/mock/users.service';
 
 @Component({
   selector: 'ngx-header',
@@ -15,7 +19,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   private destroy$: Subject<void> = new Subject<void>();
   userPictureOnly: boolean = false;
-  user: any;
+  user: Usuario;
+  UsuarioActual: any
+  Usuario : Usuario
+  Nombre = "_id"
 
   themes = [
     {
@@ -44,16 +51,28 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private menuService: NbMenuService,
               private themeService: NbThemeService,
               private userService: UserData,
+              private miServicioSeguridad: SeguridadService,
+              private miServicioUsuario: UsuarioService,
               private layoutService: LayoutService,
               private breakpointService: NbMediaBreakpointsService) {
   }
 
   ngOnInit() {
+
     this.currentTheme = this.themeService.currentTheme;
+    
+    if(this.miServicioSeguridad.sesionExiste()){
+      this.UsuarioActual = this.miServicioSeguridad.elUsuario.getValue()._id;
+      this.miServicioUsuario.getUsuario(this.UsuarioActual).subscribe((users: Usuario) => this.user.seudonimo = users.seudonimo);
+    }else{
+      console.log("No hay sesión")
+    }
+  
 
     this.userService.getUsers()
       .pipe(takeUntil(this.destroy$))
       .subscribe((users: any) => this.user = users.nick);
+
 
     const { xl } = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()
@@ -90,5 +109,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   navigateHome() {
     this.menuService.navigateHome();
     return false;
+  }
+
+  obtenerNombreUsuario(){
+    this.UsuarioActual = this.miServicioSeguridad.elUsuario.getValue()._id;
+    this.miServicioUsuario.getUsuario(this.UsuarioActual).subscribe((users: Usuario) => this.user.seudonimo = users.seudonimo);
+    return this.user.seudonimo;
   }
 }

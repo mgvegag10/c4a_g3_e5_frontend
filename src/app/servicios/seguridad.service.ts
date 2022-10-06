@@ -39,6 +39,7 @@ export class SeguridadService {
   getUsuario() {
     return this.elUsuario.asObservable();
   }
+
   /**
    * Realiza la petición al backend con el correo y la contraseña
    * para verificar si existe o no en la plataforma
